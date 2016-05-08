@@ -3,7 +3,7 @@ import React from 'react';
 export default class Controls extends React.Component {
 
     render() {
-        return <div></div>;
+        return <div className='controls'></div>;
     }
 
 }
