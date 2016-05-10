@@ -13,13 +13,6 @@ body {
     justify-content: center;
 	font-size: 0.95rem;
 }
-.app .controls {
-	width: 100%;
-	display: flex;
-}
-.app .controls button {
-	flex: 1;
-}
 
 .app .searchbar {
 	width: 100%;
@@ -48,4 +41,16 @@ body {
 	height: 50px;
 	text-overflow: ellipsis;
 	white-space: nowrap;
+}
+
+.app .controls {
+	width: 100%;
+}
+
+.app .controls .left {
+	float: left;
+}
+
+.app .controls .right {
+	float: right;
 }
