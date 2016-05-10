@@ -1,4 +1,5 @@
-# Verbling React Challenge
+# Verbling React Challenge [![Build Status](https://travis-ci.org/asarudick/verbling-challenge.svg?branch=master)](https://travis-ci.org/asarudick/verbling-challenge.svg?branch=master)
+
 
 ![](docs/spec.png)
 
