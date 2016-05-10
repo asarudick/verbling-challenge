@@ -2,6 +2,7 @@ language: node_js
 node_js:
   - "5.1"
 before_script:
+  - (cd client; npm install)
   - npm install webpack -g
 script:
   - (cd client; webpack)
