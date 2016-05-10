@@ -11,4 +11,41 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+	font-size: 0.95rem;
+}
+.app .controls {
+	width: 100%;
+	display: flex;
+}
+.app .controls button {
+	flex: 1;
+}
+
+.app .searchbar {
+	width: 100%;
+}
+
+.app ul {
+	width: 400px;
+	height: 400px;
+	overflow-y: scroll;
+	padding: 0 0 0 0;
+	margin: 0 0 0 0;
+}
+
+.app ul li {
+	width: 100%;
+	min-height: 50px;
+	overflow: hidden;
+	border: 1px solid #000;
+	box-sizing: border-box;
+	line-height: 50px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.app ul li.closed {
+	height: 50px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 }
