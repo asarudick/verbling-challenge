@@ -3,7 +3,7 @@ import ListItem from './ListItem';
 
 export default class List extends React.Component {
 
-    render() {
+	render() {
 
 		const items = this.props.items.map((item) => {
 			return 	<ListItem>
@@ -11,9 +11,9 @@ export default class List extends React.Component {
 					</ListItem>;
 		});
 
-        return 	<div className='list'>
+		return 	<ul>
 					{items}
-				</div>;
-    }
+				</ul>;
+	}
 
 }

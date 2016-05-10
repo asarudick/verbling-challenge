@@ -1,9 +1,20 @@
 import React from 'react';
 
-export default class ListItem extends React.Component {
+export default React.createClass({
 
-  render() {
-    return <div className='listitem'>{this.props.children}</div>;
-  }
+	getInitialState () {
+		return { closed: true };
+	},
 
-}
+	onClick () {
+		this.setState({ closed: !this.state.closed });
+	},
+
+	render () {
+
+		return 	<li className={this.state.closed ? 'closed' : ''} onClick={this.onClick}>
+					{this.props.children}
+				</li>;
+	}
+
+});
