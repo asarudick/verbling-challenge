@@ -16,6 +16,8 @@ body {
 
 .app .searchbar {
 	width: 100%;
+	border: 1px solid #000;
+	box-sizing: border-box;
 }
 
 .app ul {
@@ -23,7 +25,7 @@ body {
 	height: 400px;
 	overflow-y: scroll;
 	padding: 0 0 0 0;
-	margin: 8px 0 0 0;
+	margin: 10px 0 0 0;
 	box-sizing: border-box;
 	border: 1px solid #000;
 }
@@ -65,7 +67,7 @@ body {
 }
 
 .app .controls .left button {
-	margin: 2px 6px 2px 0px;
+	margin: 0px 6px 0px 0px;
 }
 
 .app .controls .right {
@@ -73,7 +75,7 @@ body {
 }
 
 .app .controls .right button {
-	margin: 2px 0px 2px 0px;
+	margin: 0px 0px 2px 0px;
 }
 .app .searchbar {
 	width: 100%;
