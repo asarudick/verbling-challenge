@@ -89,6 +89,7 @@ export default class Items extends EventEmitter {
 		return _(this._items)
 				.filter(a => a.text.length >= str.length && levenshtein.get(str, a.text) < a.text.length)
 				.sort((a, b) => {
+					// Prefer exact string matches.
 					if (a.text === str) {
 						return -1;
 					}
