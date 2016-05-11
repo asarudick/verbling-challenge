@@ -10,25 +10,28 @@ export default class Items extends EventEmitter {
 		this._filter = '';
 	}
 
-	toggleAll () {
-		_.forEach(this._items, (item) => {
+	toggleSelected () {
+		const items = this.get();
+		_.forEach(items, (item) => {
 			item.toggle();
 		});
-		this.emit('toggle', [this._items]);
+		this.emit('toggle', [items]);
 	}
 
-	collapseAll () {
-		_.forEach(this._items, (item) => {
+	collapseSelected () {
+		const items = this.get();
+		_.forEach(items, (item) => {
 			item.collapse();
 		});
-		this.emit('collapse', [this._items]);
+		this.emit('collapse', [items]);
 	}
 
-	expandAll () {
-		_.forEach(this._items, (item) => {
+	expandSelected () {
+		const items = this.get();
+		_.forEach(items, (item) => {
 			item.expand();
 		});
-		this.emit('expand', [this._items]);
+		this.emit('expand', [items]);
 	}
 
 	add (text) {
@@ -42,6 +45,7 @@ export default class Items extends EventEmitter {
 		this.emit('add', [item]);
 	}
 
+	// NOTE: Could cache results until filter is set/unset to improve performance.
 	search (str) {
 		return _(this._items)
 				.filter(a => a.text.length >= str.length && levenshtein.get(str, a.text) < a.text.length)
