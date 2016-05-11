@@ -23,20 +23,22 @@ body {
 	height: 400px;
 	overflow-y: scroll;
 	padding: 0 0 0 0;
-	margin: 0 0 0 0;
+	margin: 8px 0 0 0;
+	box-sizing: border-box;
+	border: 1px solid #000;
 }
 
 .app ul li {
 	width: 100%;
 	min-height: 50px;
 	overflow: hidden;
-	border: 1px solid #000;
-	margin-top: 2px;
+	border-bottom: 1px solid #000;
 	box-sizing: border-box;
 	line-height: 50px;
 	padding-left: 10px;
 	padding-right: 10px;
 	cursor: pointer;
+	word-wrap: break-word;
 }
 
 .app ul li.closed {
@@ -47,10 +49,7 @@ body {
 
 .app .controls {
 	width: 100%;
-}
-
-.app .controls .left {
-	float: left;
+	margin-top: 10px;
 }
 
 .app .controls button {
@@ -59,6 +58,10 @@ body {
 	border: 1px solid #000;
 	font-size: 0.9rem;
 	cursor: pointer;
+}
+
+.app .controls .left {
+	float: left;
 }
 
 .app .controls .left button {
