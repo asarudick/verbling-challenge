@@ -17,6 +17,7 @@ export default React.createClass({
 			        type='text'
 			        value={this.state.value}
 			        onChange={this.onChange}
+					placeholder='Search'
 				/>;
 	}
 
