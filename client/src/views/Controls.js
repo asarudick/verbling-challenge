@@ -15,6 +15,12 @@ export default class Controls extends React.Component {
 
 	onAdd () {
 		const text = window.prompt('What would you like to add?');
+
+		// Ignore empty submissions.
+		if (!text) {
+			return;
+		}
+
 		this.props.items.add(text);
 	}
 
