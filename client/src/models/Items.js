@@ -10,45 +10,6 @@ export default class Items extends EventEmitter {
 		this._filter = '';
 	}
 
-	toggle (index) {
-		const item = this._items[index];
-
-		if (!item)
-		{
-			return;
-		}
-
-		item.toggle();
-
-		this.emit('toggle', item);
-	}
-
-	collapse (index) {
-		const item = this._items[index];
-
-		if (!item)
-		{
-			return;
-		}
-
-		item.collapse();
-
-		this.emit('collapse', item);
-	}
-
-	expand (index) {
-		const item = this._items[index];
-
-		if (!item)
-		{
-			return;
-		}
-
-		item.expand();
-
-		this.emit('expand', item);
-	}
-
 	toggleAll () {
 		_.forEach(this._items, (item) => {
 			item.toggle();
