@@ -1,15 +1,11 @@
 import React from 'react';
 import ListItem from './ListItem';
-
+import _ from 'lodash';
 export default class List extends React.Component {
 
 	render() {
-
-		const items = this.props.items.map((item) => {
-			return 	<ListItem>
-						{item.text}
-					</ListItem>;
-		});
+		let id = 0;
+		const items = _.map(this.props.items.getAll(), (item) => <ListItem key={id++} item={item}></ListItem>);
 
 		return 	<ul>
 					{items}
