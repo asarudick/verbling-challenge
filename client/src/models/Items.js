@@ -96,9 +96,13 @@ export default class Items extends EventEmitter {
 				.filter(a => levenshtein.get(filter, a.text) < a.text.length)
 				.sort((a, b) => {
 					// Prefer strings that begin with the filter.
-					if (_.startsWith(a, filter))
+					if (_.startsWith(a.text, filter))
 					{
 						return -1;
+					}
+					if (_.startsWith(b.text, filter))
+					{
+						return 1;
 					}
 					// Otherwise, we'll sort by string distance.
 					return levenshtein.get(filter, a.text) - levenshtein.get(filter, b.text);
