@@ -81,10 +81,6 @@ export default class Items extends EventEmitter {
 		this.emit('add', [item]);
 	}
 
-	get (index) {
-		return this._items[index];
-	}
-
 	search (str) {
 		return _(this._items)
 				.filter(a => a.text.length >= str.length && levenshtein.get(str, a.text) < a.text.length)
@@ -109,7 +105,7 @@ export default class Items extends EventEmitter {
 				.value();
 	}
 
-	getAll () {
+	get () {
 		const filter = this._filter;
 
 		if (!filter) {
