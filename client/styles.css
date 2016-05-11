@@ -54,3 +54,8 @@ body {
 .app .controls .right {
 	float: right;
 }
+
+.app .searchbar {
+	width: 100%;
+	box-sizing: border-box;
+}
