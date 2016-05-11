@@ -8,7 +8,7 @@ export default class App extends React.Component {
 	render () {
 		return	<div className='app'>
 					<SearchBar items={this.props.items} />
-					<List items={this.props.items} />
+					<List items={this.props.items.get()} />
 					<Controls items={this.props.items} />
 				</div>;
 	}
