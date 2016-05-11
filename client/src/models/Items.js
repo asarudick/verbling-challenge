@@ -85,6 +85,25 @@ export default class Items extends EventEmitter {
 		return this._items[index];
 	}
 
+	search (str) {
+		return _(this._items)
+				.filter(a => a.text.length >= str.length && levenshtein.get(str, a.text) < a.text.length)
+				.sort((a, b) => {
+					// Prefer strings that begin with the filter.
+					if (_.startsWith(a.text, str))
+					{
+						return -1;
+					}
+					if (_.startsWith(b.text, str))
+					{
+						return 1;
+					}
+					// Otherwise, we'll sort by string distance.
+					return levenshtein.get(str, a.text) - levenshtein.get(str, b.text);
+				})
+				.value();
+	}
+
 	getAll () {
 		const filter = this._filter;
 
@@ -92,22 +111,7 @@ export default class Items extends EventEmitter {
 			return this._items;
 		}
 
-		return _(this._items)
-				.filter(a => levenshtein.get(filter, a.text) < a.text.length)
-				.sort((a, b) => {
-					// Prefer strings that begin with the filter.
-					if (_.startsWith(a.text, filter))
-					{
-						return -1;
-					}
-					if (_.startsWith(b.text, filter))
-					{
-						return 1;
-					}
-					// Otherwise, we'll sort by string distance.
-					return levenshtein.get(filter, a.text) - levenshtein.get(filter, b.text);
-				})
-				.value();
+		return this.search(filter);
 	}
 
 	set filter (str) {
