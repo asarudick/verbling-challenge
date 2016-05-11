@@ -31,10 +31,12 @@ body {
 	min-height: 50px;
 	overflow: hidden;
 	border: 1px solid #000;
+	margin-top: 2px;
 	box-sizing: border-box;
 	line-height: 50px;
 	padding-left: 10px;
 	padding-right: 10px;
+	cursor: pointer;
 }
 
 .app ul li.closed {
@@ -51,11 +53,28 @@ body {
 	float: left;
 }
 
+.app .controls button {
+	padding: 8px;
+	background-color: #FFF;
+	border: 1px solid #000;
+	font-size: 0.9rem;
+	cursor: pointer;
+}
+
+.app .controls .left button {
+	margin: 2px 6px 2px 0px;
+}
+
 .app .controls .right {
 	float: right;
 }
 
+.app .controls .right button {
+	margin: 2px 0px 2px 0px;
+}
 .app .searchbar {
 	width: 100%;
 	box-sizing: border-box;
+	font-size: 1.1rem;
+	padding: 8px;
 }
