@@ -2,15 +2,15 @@ import React from 'react';
 
 export default class Controls extends React.Component {
 	onExpandAll () {
-		this.props.items.expandAll();
+		this.props.items.expandSelected();
 	}
 
 	onCollapseAll () {
-		this.props.items.collapseAll();
+		this.props.items.collapseSelected();
 	}
 
 	onToggleAll () {
-		this.props.items.toggleAll();
+		this.props.items.toggleSelected();
 	}
 
 	onAdd () {
@@ -22,6 +22,12 @@ export default class Controls extends React.Component {
 		}
 
 		this.props.items.add(text);
+	}
+
+
+	shouldComponentUpdate (nextProps) {
+		// Only update if the Items instance changes.
+		return nextProps.items !== this.props.items;
 	}
 
     render() {

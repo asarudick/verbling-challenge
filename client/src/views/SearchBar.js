@@ -6,9 +6,15 @@ export default React.createClass({
 		return {value: ''};
 	},
 
+	shouldComponentUpdate (nextProps) {
+		// Only update if the filter changes.
+		return nextProps.items.filter !== this.props.items.filter;
+	},
+
 	onChange (event) {
     	this.setState({value: event.target.value});
 		this.props.items.filter = event.target.value;
+		this.forceUpdate();
 	},
 
 	render () {
